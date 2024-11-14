@@ -28,7 +28,7 @@ public class UserServiceIntegrationTests
         var user = new User("John", "Doe", "john.doe@example.com");
 
         // Act
-        var userId = _userService.InsertUser(user);
+        var userId = _userService.InsertUser(user, false);
 
         // Assert
         var savedUser = _context.Users.Find(userId);

@@ -9,18 +9,20 @@ public class User {
 // Use case
 public class UserService{   
 
-    public UserService(IUserRepository userRepository, IEmailService emailService, INewsletterService newsletterService) {
+    public UserService(IUserRepository userRepository, IEmailService emailService, INewsletterService newsletterService, IDocumentLibraryService documentLibraryService) {
        // ...
     }
 
-    public int InsertUser(User user) {
+    public int InsertUser(User user, bool subscribeNewsletter) {
         if (string.IsNullOrWhiteSpace(user.Name)) throw new ArgumentException("Name is required");
         if (string.IsNullOrWhiteSpace(user.Surname)) throw new ArgumentException("Surname is required");
 
         int id = _userRepository.Insert(user);
 
         _emailService.SendWelcomeMessage(user.Email);
-        _newsletterService.AddUserToNewsletter(id);
+        if(subscribeNewsletter)
+            _newsletterService.AddUserToNewsletter(id);
+        _documentLibraryService.Configure();
 
         return id;
     }
@@ -48,10 +50,11 @@ public class UserController {
             string name = txtName.Text;
             string surname = txtSurname.Text;
             string email = txtEmail.Text;
+            bool subscribeNewsletter = chbSubscribeNewsletter.Selected;
 
             User user = new User(name, surname, email);
 
-            _userService.InsertUser(user);
+            _userService.InsertUser(user, subscribeNewsletter);
         }
         catch (Exception ex)
         {
