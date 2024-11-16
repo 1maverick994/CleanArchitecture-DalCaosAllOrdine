@@ -1,18 +1,20 @@
 public class User{
 
-    public void insertUser(){
+    public HttpResponse InsertUser(HttpRequest httpRequest){
 
         try{
-            spinner.Show();
+            if(httpRequest.Body == null) ReturnError("Empty body");
+            if(IsValidJson(httpRequest.Body) == false) ReturnError("Body is not a valid json");
+            // other request validation
 
-            string name = txtName.Text;
-            string surname = txtSurname.Text;
-            string email = txtEmail.Text;
-            bool subscribeNewsletter = chbSubscribeNewsletter.Selected;
+            string name = jsonRequest.GetFieldValue("name");
+            string surname = jsonRequest.GetFieldValue("surname");
+            string email = jsonRequest.GetFieldValue("email");
+            bool subscribeNewsletter = jsonRequest.GetFieldValue("subscribeNewsletter");
             //...other fields...
 
-            if (string.IsNullOrWhiteSpace(name)) DisplayError("Name is required");
-            if (string.IsNullOrWhiteSpace(surname)) DisplayError("Surname is required");
+            if (string.IsNullOrWhiteSpace(name)) ReturnError("Name is required");
+            if (string.IsNullOrWhiteSpace(surname)) ReturnError("Surname is required");
             // ...other fields validation...
 
             int id = database.Insert("INSERT INTO Users (Name, Surname, Email) VALUES @p1, @p2, @p3", name, surname, email);
@@ -30,12 +32,12 @@ public class User{
             documentLibraryClient.Configure();
             //...ecc
 
+            var response = new HttpResponse(StatusCode.Ok, new { UserId = userId});
+            return response;
+
         }
         catch (ex){
             throw;
-        }
-        finally{
-            spinner.Hide();
         }
     }
 }
