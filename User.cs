@@ -2,7 +2,6 @@ public class User{
 
     public HttpResponse InsertUser(HttpRequest httpRequest){
 
-        try{
             if(httpRequest.Body == null) ReturnError("Empty body");
             if(IsValidJson(httpRequest.Body) == false) ReturnError("Body is not a valid json");
             // other request validation
@@ -34,10 +33,8 @@ public class User{
 
             var response = new HttpResponse(StatusCode.Ok, new { UserId = userId});
             return response;
-
-        }
-        catch (ex){
-            throw;
-        }
     }
+
 }
+
+
