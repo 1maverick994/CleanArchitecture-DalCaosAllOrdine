@@ -6,7 +6,7 @@ Benvenuto nel repository del mio talk su **Clean Architecture**! 🎉 Qui trover
 
 - **📖 Slide**: Ti sei perso il talk o vuoi un riepilogo? Dai un’occhiata alle slide per seguire il filo del discorso e rivedere i concetti chiave.  
 - **💻 Esempi di codice**: Frammenti e demo per vedere Clean Architecture in azione!
-- 
+
 ## Why Clean Architecture? 🤔
 
 Ti è mai capitato di:
