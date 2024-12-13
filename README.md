@@ -1,18 +1,17 @@
 # 🏛️ Clean Architecture: dal caos all'ordine
 
-Welcome to the repository for my talk on **Clean Architecture**! 🎉 Here you’ll find everything you need to dive into the world of crafting robust, maintainable, and scalable software.
+Benvenuto nel repository del mio talk su **Clean Architecture**! 🎉 Qui troverai un punto di partenza per esplorare il mondo della creazione di software robusti, mantenibili e scalabili.
 
 ## What’s Inside? 🗂️
 
-- **📖 Slides**: Missed the talk or want a recap? Check out the presentation slides to follow the narrative and revisit key concepts.  
-- **💻 Code Examples**: snippets and demos to help you see Clean Architecture in action!
-
+- **📖 Slide**: Ti sei perso il talk o vuoi un riepilogo? Dai un’occhiata alle slide per seguire il filo del discorso e rivedere i concetti chiave.  
+- **💻 Esempi di codice**: Frammenti e demo per vedere Clean Architecture in azione!
+- 
 ## Why Clean Architecture? 🤔
 
-Have you ever found yourself:
-- Drowning in a sea of spaghetti code? 🍝  
-- Wondering why small changes require monumental effort? 🏗️  
-- Dreaming of a project that doesn’t break at the slightest touch? 💭  
+Ti è mai capitato di:
+- Affogare in un mare di codice spaghetti? 🍝  
+- Chiederti perché piccoli cambiamenti richiedono sforzi monumentali? 🏗️  
+- Sognare un progetto che non si rompa al minimo tocco? 💭  
 
-Then this is for you! Clean Architecture is more than just a buzzword; it’s a way to structure your software so that it remains resilient, adaptable, and easy to understand—even when your future self (or your teammates) revisit the code.
-
+Allora sei nel posto giusto! Clean Architecture non è solo una parola di moda; è un modo per strutturare il software affinché resti resiliente, adattabile e facile da capire anche quando il tuo futuro te stesso (o i tuoi colleghi) torneranno a lavorarci.
